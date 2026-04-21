@@ -35,6 +35,7 @@ function createGrid(size) {
     }
 }
 
+// Function to change the color of a square on hover
 function changeColor(event) {
     if (event.target.classList.contains("square")) {
         // set the background color of the square to a random color
@@ -42,6 +43,7 @@ function changeColor(event) {
     }
 }
 
+// Function to generate a random color
 function getRandomColor() {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
@@ -49,6 +51,7 @@ function getRandomColor() {
     return `rgb(${r}, ${g}, ${b})`;
 }
 
+// Function to resize the grid based on user input
 function resizeGrid() {
     const newSize = prompt("Enter the new grid size (e.g. 16 for 16x16):");
     if (newSize > 0 && newSize <= 100) {
@@ -58,11 +61,14 @@ function resizeGrid() {
     }
 }
 
+// Add event listeners
 const resizeButton = document.querySelector(".resize-button");
 
 resizeButton.addEventListener("click", resizeGrid);
 
 container.addEventListener("mouseover", changeColor);
 
+
+// Initialize the grid with a default size of 16x16
 createGrid(16);
 
